@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <title>This is my Assignment for Chapter 13</title>
+        <style>
+            .body {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            p {
+                color: rgb(173, 40, 40);
+                font-size: 16px;
+            }
+            .container {
+                max-width: 1200px;
+                margin: auto;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-gap: 50px;
+                margin-top: 20px;
+            }
+            .card {
+                box-shadow: 0 6px 12px 0 rgba(0,0,0,0.2);
+                transition: 0.4s;
+                border-radius: 5px;
+            }
+    
+            .card:hover {
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            }
+    
+            .card-container {
+                padding: 16px 24px 32px 24px;
+                border-radius: 5px;
+            }
+            .button {
+                background: rgb(63, 103, 168);
+                color: #ffffff;
+                border-radius: 5px;
+                padding: 12px 24px;
+                border: none;
+                text-transform: uppercase;
+                font-size: 12px;
+                cursor: pointer;
+            }
+        </style>
+	</head>
+	<body>
+		<div class="container">
+            <div class="card">
+                <img src="./images/1.jpg" alt="card" style="width:100%; height:400px;">
+                <div class="card-container">
+                    <h4><b>Blazer</b   ></h4> 
+                    <p>Slim fit check suit blazer</p>
+                    <p>Check fabric. Long buttoned sleeve</p>
+                    <p><b>PKR 10000</b></p>
+                    <button class="button">read more</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="./images/2.jpg" alt="card" style="width:100%;height:400px;">
+                <div class="card-container">
+                    <h4><b>Shirt</b></h4> 
+                    <p>Slim-fit Tailored polka-dot shirt</p>
+                    <p>Tailored super slim fit cotton shirt</p>
+                    <p><b>PKR 2500</b></p>
+                    <button class="button">read more</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="./images/3.jpg" alt="card" style="width:100%;height:400px;">
+                <div class="card-container">
+                    <h4><b>Trouser</b></h4> 
+                    <p>Slim fit check suit trouser</p>
+                    <p>Check fabric, Loops, hook and zip fastening</p>
+                    <p><b>PKR 3500</b></p>
+                    <button class="button">read more</button>
+                </div>
+            </div>
+
+        </div>
+	</body>
+</html>

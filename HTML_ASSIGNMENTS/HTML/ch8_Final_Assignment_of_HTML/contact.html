@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact</title>
+	<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+	<div class="container">
+		<div class="menu">
+			<div class="logo">
+				<img src="./images/logo.png" alt="logo">
+			</div>
+			<div>
+				<a class="menu-item" href="index.html">Home</a>
+				<a class="menu-item" href="about.html">About</a>
+				<a class="menu-item" href="portfolio.html">Portfolio</a>
+				<a class="menu-item" href="contact.html">Contact</a>
+			</div>
+		</div>
+		<div style="padding-top: 15px;">
+			<form method="" action="">
+				<fieldset>
+					<legend>Your Details:</legend>
+					<label>Name:</label>
+					<input type="text" id="name" name="name"><br><br>
+					<label>Email:</label>
+					<input type="email" id="email" name="email"><br><br>
+				</fieldset>
+			</form>
+			<br>
+			<form>
+				<fieldset>
+					<legend>Your Review:</legend>
+					<br>
+					How did you hear about us?
+					<select name="websites" id="websites">
+						<option value="goole">Google</option>
+						<option value="facebook">Facebook</option>
+						<option value="twitter">Twitter</option>
+					</select>
+					<br><br>
+
+					<input type="radio" id="yes" name="gender" value="yes">
+					<label>Yes</label>
+
+					<input type="radio" id="no" name="gender" value="no">
+					<label>No</label>
+
+					<input type="radio" id="Maybe" name="gender" value="Maybe">
+					<label>Maybe</label>
+					<br>
+					<br>
+
+					<label>Comment:</label>
+					<br>
+					<textarea name="comment" id="comment" cols="40" rows="4"></textarea>
+					<br>
+					<br>
+
+					<input type="checkbox" id="signup" name="signup" value="true" checked="">
+					<label> Sign me up for email updates</label>
+					<br>
+
+					<input type="submit" value="Submit Review">
+				</fieldset>
+			</form>
+		</div>
+		<div class="map">
+			<iframe id="preview" allowfullscreen="" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJE5LuYUg_sz4RERFzKqV0F28&amp;key=AIzaSyD4iE2xVSpkLLOXoyqT-RuPwURN3ddScAI" width="100%" height="450"></iframe>
+		</div>
+		<div class="footer">
+			Copyright © 2020-21. All rights reserved.
+		</div>
+    </div>
+</body>
+</html>

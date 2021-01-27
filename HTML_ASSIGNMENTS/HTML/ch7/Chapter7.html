@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>This is my Assignment for Chapter 7</title>
+	</head>
+	<body>
+        <h1>Chaptern # 7 - Forms</h1>
+        <form action="">
+            <fieldset>
+                <legend>Your Details:</legend>
+                <label>Name:</label>
+                <input type="text" id="name" name="name"><br><br>
+                <label>Email:</label>
+                <input type="email" id="email" name="email"><br><br>
+            </fieldset>
+        </form>
+    <br>  
+        <form>
+            <fieldset>
+                <legend>Your Review:</legend>
+                <br>
+                How did you hear about us?
+                <select name="websites" id="websites">
+                        <option value="goole">Google</option>
+                        <option value="facebook">Facebook</option>
+                        <option value="twitter">Twitter</option>
+                    </select>
+                    <br><br>
+
+                    <input type="radio" id="yes" name="gender" value="yes">
+                    <label>Yes</label>
+
+                    <input type="radio" id="no" name="gender" value="no">
+                    <label>No</label>
+
+                    <input type="radio" id="Maybe" name="gender" value="Maybe">
+                    <label for="Maybe">Maybe</label>
+                    <br>
+                    <br>
+
+                    <label>Comment:</label>
+                    <br>
+                    <textarea name="comment" id="comment" cols="40" rows="4"></textarea>
+                    <br>
+                    <br>
+                    
+                    <input  type="checkbox" id="signup" name="signup" checked="">
+                    <label> Sign me up for email updates</label>
+                <br>
+                <input type="submit" value="Submit Review">
+            </fieldset>
+        </form>
+    </body>
+</html>
