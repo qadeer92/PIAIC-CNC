@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - Chapter 21 to 30 - B</title>
+    <a class="menu-item" href="index.html">Index Page</a>
+</head>
+<body>
+    <h1 style="align-content: center;">Maths & Misc Functions - B</h1>
+    <script>
+        //Assignment B
+        var strInput = "cloUd naTive computinG";
+        document.write("Improper case: " + strInput + "<br>");
+        console.log("Improper case: " + strInput);
+
+        var strUcase = "";
+        for (var i = 0; i <= strInput.length - 1; i++) {
+            
+            if ( i === 0 ) {
+                strUcase = strUcase + strInput.charAt(i).toUpperCase();
+            }
+            else if ( strInput.charAt(i) === " ") {
+                strUcase = strUcase + " " + strInput.charAt(++i).toUpperCase();
+            }
+            else {
+                strUcase = strUcase + strInput.charAt(i).toLowerCase();
+            }
+        }
+        document.write("Proper case: " + strUcase + "<br>");
+        console.log("Proper case: " + strUcase);
+        //Assignment B
+
+        
+    </script>
+</body>
+</html>

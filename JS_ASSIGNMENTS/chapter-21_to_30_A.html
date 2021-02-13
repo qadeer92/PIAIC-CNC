@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - Chapter 21 to 30 - A</title>
+    <a class="menu-item" href="index.html">Index Page</a>
+</head>
+<body>
+    <h1 style="align-content: center;">Maths & Misc Functions - A</h1>
+    <script>
+        //Assignment A
+        var num = +prompt("Enter a decimal value: ");
+        num = Number(num).toFixed(2);
+        var greaterNum = Math.ceil(num);
+        document.write("Greater Number: " + greaterNum + "<br><br>");
+
+        var text = "Love you Pakistan";
+        document.write("Complete text: " + text + "<br>");
+        var sliceText = text.slice(0,4);
+        document.write("Slice Text: " + sliceText + "<br>");
+
+        var reverseText = "";
+        for (var i = sliceText.length - 1; i >= 0; i--) {
+            reverseText = reverseText + sliceText.charAt(i);
+        }
+        document.write("Reverse Text: " + reverseText + "<br><br>");
+        //Assignment 
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - Chapter 10 to 14 - A</title>
+    <a class="menu-item" href="index.html">Index Page</a>
+</head>
+<body>
+    <h1 style="align-content: center;">Simple Calculator</h1>
+    <script>
+       var num1 = +prompt("Enter first number?");
+       var num2 = +prompt("Enter second number?");
+       var op = prompt("Enter operator '+,-,* or /' only.");
+       var result = 0;
+       if (op === "+") {
+            result = num1 + num2;
+       }
+       else if (op === "-") {
+            result = num1 - num2;
+       }
+       else if (op === "*") {
+            result = num1 * num2;
+       }
+       else if (op === "/") {
+        result = num1 / num2;
+       }
+       else if (op === "%") {
+            result = num1 % num2;
+       }
+       else {
+           result="Wrong operator!";
+       }
+       alert("The result is: " + result);
+       document.write("First Number is: " + num1 + "<br>");
+       document.write("Second Number is: " + num2 + "<br>");
+       document.write("Operator is: " + op + "<br>");
+       document.write("<br>");
+       document.write("The resut of (" + num1 + " " + op + " " + num2 + ") is = "   + result);
+    </script>
+</body>
+</html>

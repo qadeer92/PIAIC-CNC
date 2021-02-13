@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - Chapter 35 to 38 - B</title>
+    <a class="menu-item" href="index.html">Index Page</a>
+</head>
+<body>
+    <h1 style="align-content: center;">Functions - B</h1>
+    <script>
+        var num = +prompt ("Enter a number to factorialize?")
+        document.write("The factorialize of number " + num + " is: " + factorialize(num));
+        function factorialize(num) {
+            var result = num;
+            if (num === 0 || num === 1) 
+                return 1; 
+            while (num > 1) { 
+                num--;
+                result *= num;
+            }
+            return result;
+        }
+    </script>
+</body>
+</html>

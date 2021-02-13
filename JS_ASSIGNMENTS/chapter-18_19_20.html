@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - Chapter 18, 19, 20</title>
+    <a class="menu-item" href="index.html">Index Page</a>
+</head>
+<body>
+    <h1 style="align-content: center;">For Loop with Arrays</h1>
+    <script>
+        var courses = ["Computer","Python","Java","Docker","HTML"];
+        var marks=[];
+        var marksInCourses = [];
+        var result = [];
+        
+        for (var i = 0; i <= courses.length-1; i++) {
+            marks[i] = +prompt("Enter obtained marks in " + courses[i] );
+            if (marks[i] < 33) {
+                result[i]=" Grade: Fail"
+            }
+            else if (marks[i] > 32 && marks[i] <= 40) {
+                result[i]=" Grade: E"
+            }
+            else if (marks[i] >= 40 && marks[i] <= 50) {
+                result[i]=" Grade: D"
+            }
+            else if (marks[i] >= 50 && marks[i] <= 60) {
+                result[i]=" Grade: C"
+            }
+            else if (marks[i] >= 60 && marks[i] <= 70) {
+                result[i]=" Grade: B"
+            }
+            else if (marks[i] >= 70 && marks[i] <= 80) {
+                result[i]=" Grade: A"
+            }
+            else if (marks[i] >= 80 ) {
+                result[i]=" Grade: A+"
+            }
+            else {
+                result[i]="Wrong value"
+            }
+
+            marksInCourses[i] = "<br> You got in " + courses[i] + " " + marks[i] + " marks, " + result[i];
+        }
+        document.write(marksInCourses.toString() + "<br>");
+        
+    </script>
+</body>
+</html>

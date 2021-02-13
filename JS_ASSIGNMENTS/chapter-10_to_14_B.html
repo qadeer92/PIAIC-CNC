@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - Chapter 10 to 14 - B</title>
+    <a class="menu-item" href="index.html">Index Page</a>
+</head>
+<body>
+    <h1 style="align-content: center;">Percentage Calculator</h1>
+    <script>
+       var c1 = +prompt("Enter Chemisty marks?");
+       var c2 = +prompt("Enter Biology marks?");
+       var c3 = +prompt("Enter Physics marks?");
+       var c4 = +prompt("Enter Maths marks?");
+       var c5 = +prompt("Enter English marks?");
+       var percentage = 0;
+       var maxTotalMarks = 500;
+       var totalMarksObtained = c1 + c2 + c3 + c4 + c5;
+       if(!totalMarksObtained  || totalMarksObtained > 500 || totalMarksObtained < 0 ) {
+        result = "Wrong marks entered!";
+       }
+       else {
+            alert(totalMarksObtained);
+           percentage = (totalMarksObtained * 100) / maxTotalMarks;
+           result = "Total Percentage is: " + percentage + "%";
+       }
+        
+       alert(result);
+       document.write("Max total marsk: " + maxTotalMarks + "<br>");
+       document.write("Total obtained marks: " + totalMarksObtained + "<br>");
+       document.write("<br>");
+       document.write(result);
+    </script>
+</body>
+</html>

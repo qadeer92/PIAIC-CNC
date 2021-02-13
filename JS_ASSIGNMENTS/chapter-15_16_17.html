@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - Chapter 15, 16, 17</title>
+    <a class="menu-item" href="index.html">Index Page</a>
+</head>
+<body>
+    <h1 style="align-content: center;">Arrays</h1>
+    <script>
+        var courses = [];
+
+
+        var course1 = prompt("Type first course name", "Computer");
+        var course2 = prompt("Type second course name", "Python");
+        var course3 = prompt("Type third course name", "Java");
+        var course4 = prompt("Type forth course name", "Docker");
+        var course5 = prompt("Type fifth course name", "HTML");
+
+        courses.push(course1,course2,course3,course4,course5);
+
+        alert("After using push(): " + courses);
+        document.write("After using push(): " + courses + "<br>");
+        
+        course1=prompt(course1, courses[0]);
+        course2=prompt(course2, courses[1]);
+        course3=prompt(course3, courses[2]);
+        course4=prompt(course4, courses[3]);
+        course5=prompt(course5, courses[4]);
+
+        courses = [course1,course2,course3,course4,course5];
+
+        alert("After user input: " + courses);
+        document.write("After user input: " + courses + "<br>");
+
+        courses.splice(2, 3, course1,course2,course5);
+        courses.splice(0, 2, course3,course4);
+
+		alert("After using splice(): " +  courses);
+        document.write("After using splice(): " + courses + "<br>");
+    </script>
+</body>
+</html>

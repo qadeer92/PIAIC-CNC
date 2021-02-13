@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - Chapter 35 to 38 - A</title>
+    <a class="menu-item" href="index.html">Index Page</a>
+</head>
+<body>
+    <h1 style="align-content: center;">Functions - A</h1>
+    <script>
+        function properCase(strValue){
+            var strProperCase = "";
+        for (var i = 0; i <= strValue.length - 1; i++) {
+            
+            if ( i === 0 ) {
+                strProperCase = strProperCase + strValue.charAt(i).toUpperCase();
+            }
+            else if ( strInput.charAt(i) === " ") {
+                strProperCase = strProperCase + " " + strValue.charAt(++i).toUpperCase();
+            }
+            else {
+                strProperCase = strProperCase + strValue.charAt(i).toLowerCase();
+            }
+        }
+            return strProperCase;
+        }
+        var strInput =prompt("cloUd naTive computinG");
+        document.write("User inptu in improper case: " + strInput + "<br>");      
+        document.write("Proper case: " + properCase(strInput) + "<br>");
+        console.log("Proper case: " + properCase(strInput) );
+        //Assignment B
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - Chapter 39 to 42</title>
+    <a class="menu-item" href="index.html">Index Page</a>
+</head>
+<body>
+    <h1 style="align-content: center;">Switch</h1>
+    <script>
+       var c1 = +prompt("Enter Chemisty marks?");
+       var c2 = +prompt("Enter Biology marks?");
+       var c3 = +prompt("Enter Physics marks?");
+       var c4 = +prompt("Enter Maths marks?");
+       var c5 = +prompt("Enter English marks?");
+       
+       var maxTotalMarks = 500;
+       var totalMarksObtained = c1 + c2 + c3 + c4 + c5;
+    function gradeResult(totMarksObtained,totMaxMarks) 
+    {
+        let percentage = 0;
+       if(!totMarksObtained  || totMarksObtained > 500 || totMarksObtained < 0 ) 
+        return "Wrong marks entered!";
+       else {
+           percentage = (totMarksObtained * 100) / totMaxMarks;
+          
+           switch(true) {
+                case percentage >= 90 && percentage <= 100:
+                    return percentage +  "% Grade: A+"
+                    break;
+                case percentage >= 75 && percentage <= 89:
+                    return percentage +  "% Grade: A"
+                    break;
+                case percentage >= 60 && percentage <= 74:
+                    return percentage +  "% Grade: B"
+                    break;
+                case percentage >= 45 && percentage <= 50:
+                    return percentage +  "% Grade: C"
+                    break;
+                case percentage >= 30 && percentage <= 44:
+                    return percentage +  "% Grade: D"
+                    break;
+                case percentage <= 29:
+                    return percentage +  "% Grade: Fail"
+                    break;
+                default:
+                    return "Wrong percentage";
+            }
+       }
+
+
+    }    
+       document.write("Max total marks: " + maxTotalMarks + "<br>");
+       document.write("Total obtained marks: " + totalMarksObtained + "<br>");
+       document.write("<br>");
+       document.write("Your result : " + gradeResult(totalMarksObtained,maxTotalMarks));
+       alert("Your result : " + gradeResult(totalMarksObtained,maxTotalMarks));
+    </script>
+</body>
+</html>

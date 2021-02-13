@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - Chapter 31 to 34</title>
+    <br>
+    <a class="menu-item" href="index.html">Index Page</a>
+</head>
+<body>
+    <h1 style="align-content: center;">Date and Time</h1>
+    <script>
+        var name = prompt("Enter your Name");
+        var dd = prompt("Enter DOB(Date) of your Age");
+        var mm = prompt("Enter DOB(Month) of your Age");
+        var yyyy = prompt("Enter DOB(Year) of your Age");
+        var today = new Date();
+        var hr = today.getHours();
+        var h = hr % 12;
+        var greet = "";
+	
+        if (hr < 12) {
+            greet = "Good Morning!";
+        }
+        else if (hr >= 12 && hr <= 17) {
+            greet = "Good Afternoon!";
+        }
+        else if (hr >= 17 && hr <= 24) {
+            greet = "Good Evening!";            
+        } else {
+            greet = "Good Day!";                        
+        }
+        
+        document.write("Hello! " + name + " " + greet + "<br>");
+
+        var dateString = yyyy + "-" + mm + "-" + dd; 
+        var dob = new Date(dateString);
+        var dobDate = dob.getDate();
+        var dobMonth = dob.getMonth();
+        var dobYear = dob.getFullYear();
+        var dobHours = dob.getHours();
+        var dobMinutes = dob.getMinutes();
+        var dobSeconds = dob.getSeconds();
+        if (dobDate < 10) { 
+            dobDate = '0' + dobDate; 
+        } 
+        if (dobMonth < 10) { 
+            dobMonth = '0' + dobMonth; 
+        } 
+
+        document.write("Your date of birth in Pakistani format is " + dob.toLocaleString("en-US", {timeZone: "Asia/Karachi"}) + "<br>");
+
+        var millisecondsBetweenDOBAnd1970 = Date.parse(dob);
+        var millisecondsBetweenNowAnd1970 = Date.now();
+        var ageInMilliseconds = millisecondsBetweenNowAnd1970-millisecondsBetweenDOBAnd1970;
+        var milliseconds = ageInMilliseconds;
+        var second = 1000;
+        var minute = second*60;
+        var hour = minute*60;
+        var day = hour*24;
+        var month = day*30; 
+        var year = day*365;
+
+        var floatYears = (milliseconds/year).toFixed(3);
+        var years = Math.floor(milliseconds/year);
+        var months = Math.floor(floatYears*12);
+        var days = Math.floor(floatYears*365);
+        var hours = Math.floor(milliseconds/hour);
+        var minutes = Math.floor(milliseconds/minute);
+        var seconds = Math.floor(milliseconds/second);
+       
+        var nowMonth = new Date().getMonth() ;
+        var nowDate = new Date().getDate();
+        var nowHours = new Date().getHours();
+        var nowMinutes = new Date().getMinutes();
+        var nowSeconds = new Date().getSeconds();
+        
+        if (dobMonth == nowMonth && dobDate > nowDate) {--years;}
+
+        document.write("Your age is " + years + " in years, " + months + " in Month, " + days + " in Days, " + 
+                        hours + " in Hours, " + minutes + " in Minutes and " + seconds + " in Seconds" + "<br>");
+        
+        var ageYear = years;
+        var ageMonth = 12 - dobMonth + nowMonth;
+        var ageDate;
+        //I assumed, zero(0) for DOB hours, minutes and seconds because I didnt take input from user, 
+        var ageHours =  nowHours;
+        var ageMinutes =  nowMinutes;
+        var ageSeconds  =  nowSeconds;
+
+
+        if (nowMonth >= dobMonth) 
+            ageMonth = nowMonth - dobMonth;
+        else {
+            var monthDiff = 12 + nowMonth - dobMonth;
+        }
+        if (nowDate >= dobDate)
+            ageDate = nowDate - dobDate;
+        else {
+            ageMonth--;
+            ageDate = 31 + nowDate - dobDate;
+
+            if (ageMonth < 0) {
+                ageMonth = 11;
+            }
+        }
+        
+        document.write("You are " + ageYear + " years, " + ageMonth + " Month, " + ageDate + " Days, " + 
+                       ageHours + " Hours, " + ageMinutes + " Minutes and " + ageSeconds + " Seconds old" + "<br>");
+
+        today = new Date();
+        var nextBirthday=new Date(today.getFullYear(), dobMonth, dobDate);
+        if (today.getMonth() == dobMonth && today.getDate() > dobDate) {
+            nextBirthday.setFullYear(nextBirthday.getFullYear()+1); 
+        }
+        if (today.getMonth() == dobMonth && today.getDate() == dobDate) {
+            document.write("Happy Birth Day " + name +  ". Today is Your " + ageYear + "th Birthday!");
+        }
+        else {
+            var one_day=1000*60*60*24;
+            var nextDobDays = Math.ceil((nextBirthday.getTime()-today.getTime())/(one_day));
+            //I assumed, zero(0) for next DOB hours, minutes and seconds, because I didnt take input from user
+            var nextDobHours = nowHours;
+            var nextDobMinutes =  nowMinutes;
+            var nextDobSeconds  =  nowSeconds; 
+            document.write("How much time left in your next birthday? " + nextDobDays + " days " + nextDobHours + 
+                " hours " + nextDobMinutes + "  minutes " + nextDobSeconds + " seconds");
+        }  
+
+    </script>
+</body>
+</html>
