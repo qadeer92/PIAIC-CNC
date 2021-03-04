@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-Advance - Students Data</title>
+    <a class="menu-item" href="index.html">Index Page</a>
+</head>
+<body onload="showStudents(students,'Student')">
+    <form action ="/students.html">
+    <h1 style="align-content: center;">Students Records</h1>
+        <table id="tblStudents" cellpadding="2" width="30%" bgcolor="4499FF" align="left" cellspacing="2">
+
+            <tr>
+                <td colspan=2>
+                <center><font size=4><b>Student Information Form</b></font></center>
+                </td>
+            </tr>
+
+            <tr>
+                <td>ID</td>
+                <td><input type=text name=ID id="ID" size="20" disabled></td>
+            </tr>
+
+            <tr>
+                <td>First Name</td>
+                <td><input type=text name=firstName id="firstName" size="40"></td>
+            </tr>
+
+            <tr>
+                <td>Last Name</td>
+                <td><input type=text name=lastName id="lastName" size="40"></td>
+            </tr>
+
+            <tr>
+                <td>Full Name</td>
+                <td><input type=text name=fullName id="fullName" size="40" disabled></td>
+            </tr>
+
+            <tr>
+                <td>Age</td>
+                <td><input type=text name=age id="age" size="3"></td>
+            </tr>
+
+            <tr>
+                <td>Courses</td>
+                <td>
+                    <input type="checkbox" name="courses" value="HTML" onclick="return ValidateSelection('courses');">HTML<br>      
+                    <input type="checkbox" name="courses" value="CSS" onclick="return ValidateSelection('courses');">CSS<br>      
+                    <input type="checkbox" name="courses" value="JavaScript" onclick="return ValidateSelection('courses');">JavaScript<br>  
+                    <input type="checkbox" name="courses" value="REACT" onclick="return ValidateSelection('courses');">REACT<br>  
+                </td>
+            </tr>
+
+            <tr>
+                <td>Gender</td>
+                <td><input type="radio" id = "isMale" name="isMale" onclick="checkGender(this.name)" value="Male" size="10" checked=true>Male
+                <input type="radio" id = "isMale" name="isMale" onclick="checkGender(this.name)" value="Female" size="10">Female</td>
+            </tr>   
+            
+            <tr>
+                <td>Hobbies</td>
+                <td>
+                    <input type="checkbox" name="interests" value="Coding" onclick="return ValidateSelection('interests');">Coding<br>      
+                    <input type="checkbox" name="interests" value="Cricket" onclick="return ValidateSelection('interests');">Cricket<br>      
+                    <input type="checkbox" name="interests" value="Reading" onclick="return ValidateSelection('interests');">Reading<br>  
+                    <input type="checkbox" name="interests" value="Movies" onclick="return ValidateSelection('interests');">Movies<br>  
+                    <input type="checkbox" name="interests" value="Cooking" onclick="return ValidateSelection('interests');">Cooking<br>  
+                </td>
+            </tr>
+            <tr>
+                <td>Actions</td>
+                <td> <button id="newStudent" type="button">Add Student</button>
+                    <button id="editStudent" type="button">Update Student</button>
+                    <button id="delStudent" type="button">delete Student</button>
+                    <button id="searchStudent" type="button">Find Student</button> </td>                
+            </tr>
+        </table>
+    </form>
+    <script src="students.js"></script>
+</body>
