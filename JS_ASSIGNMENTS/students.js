@@ -315,6 +315,27 @@ function ValidateSelection(checkitems)
     }  
 }  
 
+//selected redio option
+function checkGender(sex) {
+    let redios = document.getElementsByName(sex);
+    for(var i = 0; i < redios.length; i++)  
+    {        
+        if(redios[i].checked)  {
+            iisMale = redios[i].value
+        }
+    } 
+  }
+
+
+function displayGender(isM) {
+    let redios = document.getElementsByName(sex);
+    for(var i = 0; i < redios.length; i++)  
+    {  
+        if(redios[i].checked)  {
+            iisMale = redios[i].value
+        }
+    } 
+}
 //iterate a nasted object to search single property of an student object
 function searchProperty (obj, query) {
     for (var key in obj) {
