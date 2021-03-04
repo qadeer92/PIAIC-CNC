@@ -132,6 +132,18 @@ searchStudent.addEventListener("click", function() {
     }  
 })
 
+clear.addEventListener("click", function() {
+    document.getElementById("ID").value = "";
+    document.getElementById("firstName").value = "";
+    document.getElementById("lastName").value = "";
+    document.getElementById("fullName").value = "";
+    document.getElementById("age").value = "";
+    displaySelectedItems("courses","" ,true);
+    document.getElementsByName("isMale")[0].checked = true
+    document.getElementsByName("isMale")[1].checked = false
+    displaySelectedItems("interests", "",true);
+    document.getElementById("firstName").focus(); 
+})
 /*update a single property of an object (nasted)
 function updateStudentProp(id,prop,value) {
     if (id === "") {
@@ -284,12 +296,16 @@ function objectMaxId() {
 }
 
 //checked only selected courses or hobbies
-function displaySelectedItems(checkitems,obj)  {  
+function displaySelectedItems(checkitems,obj,isClear = false)  {  
     let arrCheckBoxes = []
     let checkboxes = document.getElementsByName(checkitems);
     for (var i = 0; i < checkboxes.length; i++) {
+        if (isClear == true) {
+            checkboxes[i].checked = false;
+        } else {
         //ternary operator used
         checkboxes[i].checked = (obj.indexOf(checkboxes[i].value) >= 0) ?   true : false
+        }
     }
 }  
 
