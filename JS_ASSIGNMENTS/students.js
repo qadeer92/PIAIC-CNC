@@ -1,3 +1,4 @@
+//Student Object (nested) // I can store it into an array as well
 var students = {
     "1": {
         "firstName": "Qadeer",
@@ -5,7 +6,7 @@ var students = {
         "fullName": function() { return this.firstName + ' ' + this.lastName },
         "age": 40,
         "courses": ["HTML","CSS","JavaScript","REACT"],
-        "isMale": true,                             //I can take is male or femal just want to use some javascript shortcut
+        "isMale": true,                             //I can store male or female
         "interests":["Coding","Reading","Cricket"]        
     },
     "2": {
@@ -37,13 +38,15 @@ var students = {
     }
 }
 
-var studentRec = () => {for(var key in students) {
+//store in array for future enhancement
+var studentRec = () => {for(var key in students) {  //arrow function used
     studentRec.push(students[key]);
 }};
+
 var courses = [];
 var interests = [];
 var iisMale = "Male"
-const newStudent = document.getElementById("newStudent");
+const newStudent = document.getElementById("newStudent");   //html DOM
 const editStudent = document.getElementById("editStudent");
 const delStudent = document.getElementById("delStudent");
 const searchStudent = document.getElementById("searchStudent");
@@ -56,6 +59,7 @@ var isExist = 0;
 var currentStudentId = 0 
 var currentStudent = {}
 
+//update / add single object
 function updateStudentObject(id) {
     ValidateSelection("courses")
         ValidateSelection("interests")
@@ -70,11 +74,14 @@ function updateStudentObject(id) {
             }
             currentStudent = students[id]
 }
+
+//Insert new student
 newStudent.addEventListener("click", function() {
     isExist = 0;
     if (firstName.value === "" || lastName.value === "" ) {
         alert("You must enter first and last name.")
     } else 
+        //student's full name must be unique
         searchProperty(students,firstName.value);
         searchProperty(students,lastName.value);
         if (isExist >= 2 ) {
@@ -91,6 +98,7 @@ newStudent.addEventListener("click", function() {
         }    
     })
 
+//Edit button to edit an existing student
 editStudent.addEventListener("click", function() {
     ValidateSelection("courses");
     ValidateSelection("interests");
@@ -98,6 +106,7 @@ editStudent.addEventListener("click", function() {
     updateStudentInTableRow(currentStudentId,"update");
 })
 
+//delete button to delete a student
 delStudent.addEventListener("click", function() {
     let id = prompt("Enter the student ID");
     if (parseInt(id)) {        
@@ -107,6 +116,7 @@ delStudent.addEventListener("click", function() {
     }  
 })
 
+//Search button to find a student
 searchStudent.addEventListener("click", function() {
     let id = prompt("Enter the student ID");
     if (parseInt(id)) {
@@ -122,7 +132,7 @@ searchStudent.addEventListener("click", function() {
     }  
 })
 
-/*
+/*update a single property of an object (nasted)
 function updateStudentProp(id,prop,value) {
     if (id === "") {
         delete students[id][prop];
@@ -140,11 +150,13 @@ function updateStudentProp(id,prop,value) {
     return students
 } */
 
+//return a student object for the given id
 function findStudent(id) {
-    let student = students[id] ?? [];
+    let student = students[id] ?? []; //ES2020 Nullish coalescing operator used (A nullish value is a value that is either null or undefined)
     return student
 }
 
+//delete functionality
 function deleteStudent(id) {
     let student = findStudent(id);
     if (student.length === 0) {
@@ -165,6 +177,7 @@ function deleteStudent(id) {
     }
 }
 
+//store object properties into html DOM elements
 function showStudent(student) {
     if (student !== null) {
         document.getElementById("ID").value = currentStudentId;
@@ -173,12 +186,13 @@ function showStudent(student) {
         document.getElementById("fullName").value = student.firstName + " " + student.lastName;
         document.getElementById("age").value = student.age;
         displaySelectedItems("courses", student.courses);
+        //ternary operator used
         (student.isMale === true) ? document.getElementsByName("isMale")[0].checked = true : document.getElementsByName("isMale")[1].checked = true
         displaySelectedItems("interests", student.interests);
     }
 }
 
-
+//insert one row into html DOM table element
 function addSutdentRow(student) {
     if (student === null) {
         alert ("Student object is null");
@@ -197,6 +211,7 @@ function addSutdentRow(student) {
     }
 }
 
+//insert all students into rows of html DOM table
 function showStudents(obj, objName) {
     let tableElementContainer1 = document.createElement("div") 
     let temptableHolder  = "<table id = 'studentList' style='border: 1px solid black'><thead><tr><th>ID</th><th>First Name</th><th>Last Name</th><th>Full Name</th><th>Age</th><th>Courses</th><th>IsMale</th><th>Hobbies</th></tr></thead><tbody id = 'tbody'>";
@@ -232,6 +247,7 @@ function showStudents(obj, objName) {
     return result;
 }
 
+//update single row into html DOM table element
 function updateStudentInTableRow(id, action ) {
     let table = document.getElementById("studentList");
     for (var i = 0, row; row = table.rows[i]; i++) {
@@ -257,23 +273,27 @@ function updateStudentInTableRow(id, action ) {
 }
 
 //************support functions********************
+//max id of student
 function objectMaxId() {
     let count = [];
     for (var c in students) {
         count.push(c);
     }
-    maxId = Math.max(...count)
+    maxId = Math.max(...count) //ES6 spread operator used
     return maxId;
 }
 
+//checked only selected courses or hobbies
 function displaySelectedItems(checkitems,obj)  {  
     let arrCheckBoxes = []
     let checkboxes = document.getElementsByName(checkitems);
     for (var i = 0; i < checkboxes.length; i++) {
+        //ternary operator used
         checkboxes[i].checked = (obj.indexOf(checkboxes[i].value) >= 0) ?   true : false
     }
 }  
 
+//save selected courses or hobbies into array
 function ValidateSelection(checkitems)  
 {  
     let checkboxes = document.getElementsByName(checkitems);  
@@ -295,29 +315,7 @@ function ValidateSelection(checkitems)
     }  
 }  
 
-function checkGender(sex) {
-    let redios = document.getElementsByName(sex);
-    
-    for(var i = 0; i < redios.length; i++)  
-    {  
-        
-        if(redios[i].checked)  {
-            iisMale = redios[i].value
-        }
-    } 
-  }
-
-function displayGender(isM) {
-    let redios = document.getElementsByName(sex);
-    for(var i = 0; i < redios.length; i++)  
-    {  
-        if(redios[i].checked)  {
-            iisMale = redios[i].value
-        }
-    } 
-}
-
-
+//iterate a nasted object to search single property of an student object
 function searchProperty (obj, query) {
     for (var key in obj) {
         var value = obj[key];
@@ -333,6 +331,7 @@ function searchProperty (obj, query) {
     }
 }
 
+//total student's objects count into students object
 function objectCount (obj) {
     let objCount = 0
     for (var key in obj) {
