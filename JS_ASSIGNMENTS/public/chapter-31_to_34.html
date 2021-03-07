@@ -75,7 +75,11 @@
         var nowMinutes = new Date().getMinutes();
         var nowSeconds = new Date().getSeconds();
         
-        if (dobMonth == nowMonth && dobDate > nowDate) {--years;}
+        if (dobMonth == nowMonth && dobDate < nowDate) {
+            --years;
+            console.log(years);
+        }
+
 
         document.write("Your age is " + years + " in years, " + months + " in Month, " + days + " in Days, " + 
                         hours + " in Hours, " + minutes + " in Minutes and " + seconds + " in Seconds" + "<br>");
